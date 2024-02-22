@@ -1,6 +1,5 @@
 import os
 import hashlib
-import glob
 
 def calculate_file_hash(file_path, hash_algo="sha256"):
     """
@@ -42,6 +41,8 @@ def find_duplicate_files(directory):
     # Filter out hashes with only one file (no duplicates)
     duplicate_files = {hash_val: paths for hash_val, paths in file_hash_dict.items() if len(paths) > 1}
     return duplicate_files
+
+DIRECTORY_TO_SEARCH = ''
 
 if __name__ == "__main__":
     directory_to_search = "/Volumes/NetBackup/Media/audio"

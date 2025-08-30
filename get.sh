@@ -1,1 +1,1 @@
-./download.sh https://open.spotify.com/track/03gSgry2FGgN4cpAt0MVYJ?si=0e5b8dde81e34781 https://open.spotify.com/track/0MYTcPXAAmeKBUpBgtAV0J?si=b5b38a3bea47452d 
+./download.sh https://open.spotify.com/album/0t1FNOj7bYFbcO7813LXNe?si=Bm5-UbPySQ6gxDa7x7KZMA

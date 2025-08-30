@@ -1,6 +1,6 @@
 The short and simple guide.
 
-Make a virtual environment with python. Install the requirements file. Install ffmpeg.
+Make a virtual environment with python. Install the requirements file. Install ffmpeg `brew install ffmpeg`.
 
 Copy config.example.json to config.json. Set your spotify client ID and secret. Set the output location to be absolute if you'd like.
 

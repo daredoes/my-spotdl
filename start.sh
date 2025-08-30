@@ -1,2 +1,1 @@
-source venv/bin/activate
 python -m spotdl download $@ --sponsor-block --cookie-file cookies.txt --bitrate disable --headless --user-auth --preload

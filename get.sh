@@ -1,1 +1,0 @@
-./download.sh https://open.spotify.com/album/0t1FNOj7bYFbcO7813LXNe?si=Bm5-UbPySQ6gxDa7x7KZMA

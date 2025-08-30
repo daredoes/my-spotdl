@@ -2,7 +2,7 @@ DOCKER_IMAGE=spotdl
 DOCKER_REPO=daredoes
 TAG_NAME=$(shell date +%Y.%m.%d.%H.%M.%S)
 PLATFORMS=linux/amd64,linux/arm64
-TAG_NAME_TO_RUN=2025.08.29.23.26.11
+TAG_NAME_TO_RUN=2025.08.30.00.11.28
 
 run:
 	docker run -d \

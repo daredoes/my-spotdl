@@ -30,9 +30,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # This is the final, lean image that will be deployed.
 FROM python:3.13-slim-bullseye
 
-# Create a dedicated, non-root user for better security.
-RUN useradd --create-home --shell /bin/bash appuser
-
 # Install only the necessary RUNTIME dependencies.
 # The "-dev" packages and compilers from the build stage are not needed here.
 RUN apt-get update && \
@@ -42,17 +39,15 @@ RUN apt-get update && \
 # Create and set permissions for a data directory as root before switching users.
 ENV XDG_DATA_HOME=/data
 RUN mkdir -p $XDG_DATA_HOME/spotdl && \
-    chown -R appuser:appuser $XDG_DATA_HOME
+    chown -R 777 $XDG_DATA_HOME
 
 # Copy the virtual environment with installed packages from the builder stage.
-COPY --chown=appuser:appuser --from=builder /opt/venv /opt/venv
+COPY --from=builder /opt/venv /opt/venv
+
+WORKDIR /app
 
 # Copy the application script into the user's home directory.
-COPY --chown=appuser:appuser start.sh /home/appuser/app/start.sh
-
-# Switch to the non-root user.
-USER appuser
-WORKDIR /home/appuser/app
+COPY start.sh .
 
 # Add the virtual environment's bin directory to the PATH.
 ENV PATH="/opt/venv/bin:$PATH"

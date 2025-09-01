@@ -13,4 +13,4 @@ stripParams() {
 # ./start.sh SPOTIFY LINKS HERE
 export SONGS=$(stripParams $@)
 
-python -m spotdl download $SONGS --sponsor-block --bitrate disable --headless --user-auth --preload
+/opt/venv/bin/python -m spotdl download $SONGS --sponsor-block --bitrate disable --headless --user-auth --preload
